@@ -16,8 +16,8 @@ int main()
       ll n;
       cin >> n;
 
-      ll a[n];
-      ll b[n];
+      ll a[n] = {0};
+      ll b[n] = {0};
 
       ll one = -1, minusone = -1;
 
