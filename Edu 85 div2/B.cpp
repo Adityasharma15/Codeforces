@@ -26,12 +26,12 @@ int main()
 
     sort(v.begin(), v.end(), greater<int>());
 
-    ll ans = 0, rupee = 0, each;
+    ll ans = 0, rupee = 0;
+    double each;
 
     for(ll i = 0;i<n; i++)
     {
         rupee += v[i];
-
         each = rupee/(i+1);
 
         if(each>=x)

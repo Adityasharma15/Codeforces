@@ -41,6 +41,11 @@ int main()
             flag = false;
           }
 
+          ll d1 = temp1 - lasttemp1;
+          ll d2 = temp2 - lasttemp2;
+          if(d2>d1)
+            flag = false;
+
           lasttemp1 = temp1;
           lasttemp2 = temp2;
       }

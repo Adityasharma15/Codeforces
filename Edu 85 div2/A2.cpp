@@ -33,9 +33,6 @@ int main()
 
       for(ll i = 0; (i<(n-1)); i++)
       {
-          // cin >> temp1 >> temp2;
-
-
 
           //if( temp1 < lasttemp1))
           if(game[i+1].first< game[i].first)
@@ -50,12 +47,13 @@ int main()
           }
 
           //if(temp2>temp1)
-          if(game[i+1].first < game[i].second)
+          if(game[i].first < game[i].second)
           {
             flag = false;
           }
 
       }
+
 
       if(game[n-1].first < game[n-1].second)
         flag = false;
