@@ -35,7 +35,7 @@ int main()
 
               temp2 =  temp1 + temp3;
 
-              if(vec[j][temp2] == 9)
+              if(vec[j][temp2] == '9')
                 vec[j][temp2]--;
 
               else
