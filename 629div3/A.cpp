@@ -23,7 +23,7 @@ int main()
       ans = 0;
 
     else
-      ans =b - (a%b);
+      ans = b - (a%b);
 
     cout << ans << "\n";
 
