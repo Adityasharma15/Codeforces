@@ -13,12 +13,19 @@ int main()
 
 	while(t--)
   {
-		ll n;
-		cin >> n;
+		ll candies, baalak;
+		cin >> candies >> baalak;
 
-		//cout<<n-1;
+		ll temp = candies/baalak;
+		ll ans = temp*baalak;
 
+		ll temp2 = baalak/2;
 
+		ll temp3 = candies - ans;
+
+		ans = ans + min(temp2, temp3);
+
+		cout << ans << "\n";
 
 	}
 

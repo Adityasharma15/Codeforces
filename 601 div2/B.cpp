@@ -1,48 +1,48 @@
-#include<bits/stdc++.h>
-#define ll long long
-using namespace std;
+  #include<bits/stdc++.h>
+  #define ll long long
+  using namespace std;
 
-int main()
-{
-	ios_base::sync_with_stdio(0);
-  cin.tie(0);
-	cout.tie(0);
-
-	ll t;
-	cin >> t;
-
-	while(t--)
+  int main()
   {
-      ll fridge, chain;
-      cin >> fridge >> chain;
+  	ios_base::sync_with_stdio(0);
+    cin.tie(0);
+  	cout.tie(0);
 
-      ll ans=0, temp;
+  	ll t;
+  	cin >> t;
 
-      for(ll i = 0 ;i <fridge ; i++)
-      {
-          cin >> temp;
-          ans += temp;
-      }
+  	while(t--)
+    {
+        ll fridge, chain;
+        cin >> fridge >> chain;
 
-      ans= ans*2;
+        ll ans=0, temp;
 
-      if(fridge> chain || fridge == 2 )
-       {
-         cout << -1 << "\n";
-       }
+        for(ll i = 0 ;i <fridge ; i++)
+        {
+            cin >> temp;
+            ans += temp;
+        }
 
-      else
-      {
-      cout << ans << "\n";
+        ans= ans*2;
 
-      for(ll i = 1; i<fridge ; i++)
-        cout << i << " " << (i+1) << "\n";
+        if(fridge> chain || fridge == 2 )
+         {
+           cout << -1 << "\n";
+         }
 
-      cout << fridge << " " << 1 << "\n";
+        else
+        {
+        cout << ans << "\n";
 
-      }
+        for(ll i = 1; i<fridge ; i++)
+          cout << i << " " << (i+1) << "\n";
 
- }
+        cout << fridge << " " << 1 << "\n";
 
-  return 0;
-}
+        }
+
+   }
+
+    return 0;
+  }
