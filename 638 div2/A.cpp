@@ -30,38 +30,31 @@ int main()
     for(ll i = 0; i<n; i++)
     {
       arr[i] = 1<<(i+1);
-      total += arr[i];
       // cout << arr[i] << "\n";
+      total += arr[i];
     }
 
+    // if(temp%2==0)
+    // {
+    //   end = n/4;
+    // }
+		//
+    // else
+    //   end = (n/4) + 1;
 
-
-    if(temp%2==0)
-    {
-      end = n/4;
-    }
-
-    else
-      end = (n/4) + 1;
-
-    for(ll i = 0;i<end; i++)
+    for(ll i = 0;i<(n/2 - 1); i++)
     {
       ans1+= arr[i];
+		 }
 
-    }
+		 ans1+=arr[n-1];
 
-    for(ll i = n-1; i>= (n - n/4); i--)
-    {
-      ans1+=arr[i];
-    }
+    // for(ll i = n-1; i>= (n - n/4); i--)
+    // {
+    //   ans1+=arr[i];
+    // }
 
-    for(ll i = end; i<(n - n/4) ; i++ )
-    {
-      ans2+=arr[i];
-    }
-
-
-    // ans2 = total - ans1;
+    ans2 = total - ans1;
 
     // cout << total;
 
