@@ -29,10 +29,12 @@ int main()
     ll temp;
     bool ans = true;
 
-    for(ll i = 0;i<9*n; i++)
+    for(ll i = 0;i<n; i++)
     {
 
-      temp = vec[i%n] + i;
+      temp = (vec[i%n] + i)%n;
+
+			if(temp<0)	temp+=n;
 
       // cout << temp;
 
