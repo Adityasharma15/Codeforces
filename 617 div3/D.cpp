@@ -22,6 +22,7 @@ int main()
         {
           if(power>0)
           {
+						// Wrongg you can't destroy him with power.
             power--;
             points++;
           }
@@ -32,7 +33,7 @@ int main()
           points++;
         }
 
-        cout << points << "\n";  
+        cout << points << "\n";
     }
 
   // cout << points << "\n";
