@@ -38,7 +38,7 @@ int main()
 }
     temp2=0;
     a+=temp1;
-
+    
     while(temp2<=temp1&&j>=i)
     {
       temp2+=arr[j];
