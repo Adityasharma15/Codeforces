@@ -56,7 +56,7 @@ int main()
         // if(temp == 6)
         // cout << "&";
 
-        if(arr[temp-1] > arr[i] && temp <n)
+        if(arr[temp-1] > arr[i-1] && temp <n)
         {
           dp[temp] = max( dp[i] + 1 , dp[temp]);
           ans = max(ans, dp[temp]);
