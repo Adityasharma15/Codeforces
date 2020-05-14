@@ -2,6 +2,40 @@
 #define ll long long
 using namespace std;
 
+ll smallestDivisor(ll a)
+{
+	if(a%2==0)
+		return 2;
+
+		for(ll i = 3; i*i<a; i+=3)
+		{
+			if(a%i==0)
+				return i;
+		}
+
+		return a;
+}
+
+
+ll largestDivisor(ll a)
+{
+	ll ans = 1;
+
+	if(a%2==0)
+	{
+			ans = 2;
+	}
+
+		for(ll i = 3; i*i<a; i+=3)
+		{
+			if(a%i==0)
+				ans = max(i, ans);
+		}
+
+		return ans;
+}
+
+
 int main()
 {
 	ios_base::sync_with_stdio(0);
@@ -17,66 +51,55 @@ int main()
     ll n;
     cin >> n;
 
-		// map<ll , ll> mapp;
+		bool ans = true;
 
-		ll minelement = INT_MAX, maxelement = INT_MIN;
+		ll a = 0, b = 0,c;
 
-		while(!n%2)
+		for(ll i = 2; i*i<=n; i++)
 		{
-			// mapp[2]++;
-			 n/=2;
+				while(n%i==0)
+				{
+					a = i;
+					n/=i;
+				}
 
-			 if(minelement < 2) minelement = 2;
-			 if(maxelement > 2) maxelement = 2;
-
-			 // minelement = min( 2 , minelement);
-			 // maxelement = max( 2 , maxelement);
+				if(!a)
+					break;
 		}
 
-		while(!n%3)
+		for(ll i = 2; i*i<=n; i++)
 		{
-			// mapp[3]++;
-			n/=3;
 
-			if(minelement < 3) minelement = 3;
-			if(maxelement > 3) maxelement = 3;
+				while(n%i==0)
+				{
+					b = i;
+					n/=i;
+				}
 
-
-			// minelement = min(3, minelement);
-			// maxelement = max(3, maxelement);
+				if(!b)
+					break;
 		}
 
-		for(ll i = 5; i*i<=n; i+=2)
-		{
-			while(!n%i)
+		if(a == 0 || b == 0)
 			{
-				// mapp[i]++;
-				n/=i;
-				minelement = min(i , minelement);
-				maxelement = max(i, maxelement);
+				ans = false;
 			}
-		}
-		//
-		// if(n>2)
-		// 	{
-		// 		mapp[n]++;
-		// 		// maxelement = max(n, maxelement);
-		// 		minelement = min(n, minelement);
-		//
-		// 	}
-
-		ll a = minelement;
-		ll b = maxelement;
-		ll c = (n/a)*(n/b);
-
-
-		if(a==b || c == 1)
-			cout << "NO\n";
 
 		else
+		c = n/(a*b);
+
+		// ll a = smallestDivisor(n);
+		// ll b = largestDivisor(n);
+		//
+
+		if(c == 1 || c == a || c == b)
+			ans = false;
+
+			if(!ans)
+			cout << "NO\n";
+
+			else
 			cout << "YES\n" << a << " " << b << " " << c <<"\n";
-
-
 	}
 
   return 0;
