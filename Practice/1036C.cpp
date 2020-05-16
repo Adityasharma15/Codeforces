@@ -4,11 +4,20 @@ using namespace std;
 
 vector<ll> ans;
 
-void dp(ll idx, ll count)
+void dp(ll idx, ll count, ll number)
 {
 	if(idx == 18)
 	{
-		if(count<=3)
+		if(count<=3) ans.push_back(number);
+
+		return;
+	}
+
+	dp( idx+1, count, number*10);
+
+	for(ll i= 01; i<=9; i++)
+	{
+		dp(idx+1, count+1, number*10 + i);
 	}
 
 
