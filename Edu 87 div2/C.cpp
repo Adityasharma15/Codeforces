@@ -63,12 +63,12 @@ int main()
 		cin>>a;
     a= 2*a;
     double value = 3.1415926535/a;
-    
+
 		double d=sin(value);
     double ans=1/d;
     double x=cos(value);
     double anss = ans*x;
 
-    cout<< fixed << setprecision(9)<<ans*x<<endl;
+    cout<< fixed << setprecision(9) << ans*x << endl;
    }
 }

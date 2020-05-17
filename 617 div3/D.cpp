@@ -11,32 +11,66 @@ int main()
     ll n, a, b, power;
     cin >> n >> a >> b >> power;
 
-    ll points = 0;
+    ll points = 0, tempp = 0;
     ll monster , sump = a + b;
+
+		vector<ll> ans;
 
     for(ll i= 0; i<n; i++)
     {
         cin >> monster;
 
-        if( monster%sump > a || monster%sump == 0 )
+        if( monster%sump > 0 && monster%sump <= a )
         {
-          if(power>0)
-          {
-						// Wrongg you can't destroy him with power.
-            power--;
-            points++;
-          }
+          ans.push_back(0);
         }
 
         else
         {
-          points++;
-        }
 
-        cout << points << "\n";
+					if(monster%sump == 0)
+					{
+						monster = b;
+						tempp = monster/a;
+
+						if(monster%a!=0)
+							tempp++;
+					}
+
+					else
+					{
+						monster = monster%sump;
+
+				  	tempp = monster/a;
+
+				  	if(monster%a!=0)
+					  	tempp++;
+
+					  tempp--;
+
+					}
+
+					if(tempp<0)
+						tempp = 0;
+
+					ans.push_back(tempp);
+        }
     }
 
-  // cout << points << "\n";
+		sort(ans.begin(), ans.end());
+
+		for(auto i: ans)
+		{
+			// cout << i << " ";
+				power -= i;
+
+				if(power>=0)
+				points++;
+		}
+
+		// cout << "\n";
+
+  cout << points << "\n";
 
   return 0;
 
