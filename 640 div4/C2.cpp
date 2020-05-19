@@ -13,8 +13,19 @@ int main()
 
 	while(t--)
   {
+		ll a , x;
+    cin >> a >> x;
 
+    ll ans;
+    ans = a*(x/(a-1));
 
+    if(x%(a-1) == 0)
+        ans--;
+
+    else
+          ans += x%(a-1);
+
+    cout << ans << "\n";
 	}
 
   return 0;
