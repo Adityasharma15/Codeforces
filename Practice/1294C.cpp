@@ -78,10 +78,11 @@ int main()
 				}
 		}
 
-			if(a!=0 && b!=0)
-				c = (n/(a*b));
+				c = n;
 
-			if(c == 1 || a == b || b == c || a == c)
+			// cout << 	a << " " 	<< b << " " <<  c << "\n";
+
+			if(c == 1 || a == 0 || b==0 || b == c || a == c)
 				cout << "NO\n";
 
 			else
