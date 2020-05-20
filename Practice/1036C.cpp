@@ -38,6 +38,7 @@
 		cout.tie(0);
 
 		dp(0,0,0);
+		ans.push_back(1000000000000000000);
 
 		ll t;
 		cin >> t;
@@ -48,9 +49,8 @@
 			ll a, b;
 			cin >> a >> b;
 
-			ans.push_back(1000000000000000000);
 
-			ll answer = upper_bound(ans.begin(), ans.end(), b) - lower_bound(ans.begin(), ans.end(), a);
+			ll answer = (upper_bound(ans.begin(), ans.end(), b) - lower_bound(ans.begin(), ans.end(), a));
 
 			cout << answer << "\n";
 
