@@ -14,9 +14,12 @@ int main()
   vector<ll> pos(n+1);
   vector<ll> pow(n+1);
 
+  unordered_set<ll> positions;
+
   for(ll i = 1; i<=n; i++)
   {
     cin >> pos[i];
+    positions.insert(pos[i]);
     cin >> pow[i];
   }
 
@@ -25,15 +28,19 @@ int main()
   for(ll i = 1; i<=n; i++)
   {
     dp[i] = upper_bound(pos.begin(), pos.end(), (pos[i] - 1)) - lower_bound(pos.begin(), pos.end(), (pos[i] -pow[i])) ;
+
+    // cout << lower_bound(pos.begin(), pos.end(), (pos[i] -  pow[i]) ) - pos.begin() << "   " << upper_bound(pos.begin(), pos.end(), (pos[i] - 1)) - pos.begin() << "\n";
+    // cout << dp[i] << "\n";
   }
 
   ll kill = n + 1;
+  // cout << "&";
   ll ans = 0;
 
   for(ll i = n; i>0; i--)
   {
 
-      if(dp[i] >= ((n+2) - i))
+      if(dp[i] > ((n+2) - i))
         {
           kill = i;
         }
@@ -41,12 +48,15 @@ int main()
       else
       {
         ll tempp = dp[i];
-        ll pos = i-1;
+        ll pos = i - 1;
 
-        while(tempp-- && pos>0)
+        while(tempp-- && pos > 0)
         {
           dp[pos] = 0;
-          ans++;
+
+          if(positions.count(pos) > 0)
+            ans++;
+
           pos--;
         }
 
@@ -55,8 +65,8 @@ int main()
 
   }
 
-
   ans += ((n+1) - kill);
+
   cout << ans << "\n";
 
   return 0;
