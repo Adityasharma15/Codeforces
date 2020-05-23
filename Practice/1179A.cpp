@@ -12,7 +12,6 @@ int main()
 	cin >> n >> q;
 
   deque <ll> dq;
-
   ll temp;
 
   for(ll i = 0;i <n; i++)
@@ -44,7 +43,7 @@ int main()
     b = dq.front();
     dq.pop_front();
 
-    mp[i] = {a,b};
+    // mp[i] = {a,b};
 
     dq.push_back(min(a,b));
     dq.push_front(max(a,b));

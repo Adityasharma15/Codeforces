@@ -11,27 +11,16 @@ int main()
 	ll n, q;
   cin >> n >> q;
 
-  // vector<ll> dq(n);
 	deque <ll> dq;
-
-  ll maxpos = 0, maxele = INT_MIN;
-
 	ll temp;
 
   for(ll i = 0; i<n; i++)
   {
     cin >> temp;
 		dq.push_back(temp);
-
-    if(temp > maxele)
-    {
-			maxele = temp;
-			maxpos = i;
-		}
   }
 
 	unordered_map<ll , pair<ll,ll> > mp;
-
 	ll a, b;
 
   for(ll i = 0; i<n; i++)
@@ -61,14 +50,23 @@ int main()
 
 	ll patternsize = pattern.size();
 
+  ll qu;
+
+  // for(auto i: pattern) cout << i << "\n";
+
 	while(q--)
 	{
-		if(q<=n)
-			cout << mp[q].first << " " << mp[q].second << "\n";
+    cin >> qu;
+
+		if(qu<=n)
+			cout << mp[qu-1].first << " " << mp[qu-1].second << "\n";
 
 		else
-			cout << maxo << " " << pattern[q%patternsize] << "\n";
-	}
+    {
+      // cout << qu - n << "%" << patternsize << "\n";
+			cout << maxo << " " << pattern[(qu - (n+1) )%patternsize] << "\n";
+    }
+  }
 
   return 0;
 
