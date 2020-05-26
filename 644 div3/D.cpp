@@ -25,26 +25,16 @@ int main()
 
     else
     {
-
     ll root = sqrt(n);
     ll end = min(root, k);
     ll maxdiv = 1;
 
-    for(ll i = 2 ; i<=end; i++)
+    for(ll i = k; i>=end; i--)
     {
       if(n%i == 0)
       {
-        if (n/i == i)
-            maxdiv=max(i,maxdiv);
+					maxdiv = max(i, maxdiv);
 
-        else
-       {
-           if(n/i<=k)
-              maxdiv=max(maxdiv,n/i);
-
-           else
-             maxdiv=max(maxdiv,i);
-        }
       }
     }
 

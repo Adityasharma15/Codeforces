@@ -12,23 +12,44 @@ int main()
   cin >> n >> k;
 
   unordered_set<ll> sett;
+
+	vector<ll> vec;
+
   ll temp1;
 
   for(ll i = 0; i<n; i++)
   {
       cin >> temp1;
-      sett.insert(temp1);
+			vec.push_back(temp1);
+      sett.insert(temp1);	
   }
 
-  if(sett.size() >=k)
+  if(sett.size() < k)
   {
-    cout << "1 " << n << "\n";
-
+		cout << "-1 -1\n";
   }
 
   else
   {
-    cout << "-1 -1\n";
+		sett.clear();
+		map<ll , pair<ll,ll>> mapp;
+
+		for(ll i = 0; i<k; i++)
+			sett.insert()
+
+		ll i = 0, j = k;
+
+		while(i<n && j<n)
+		{
+
+
+
+		}
+
+
+
+
+
   }
 
   return 0;
