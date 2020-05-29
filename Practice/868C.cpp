@@ -23,21 +23,23 @@ int main()
     for(ll j = 0; j<k; j++)
     {
       cin >> value;
-      number += (value>>j);
+
+			if(value)
+      number += (value<<j);
     }
 
     mask[number]++;
   }
 
   ll ans = 0;
+
   for(ll i = 0; i<16 ; i++)
   {
     for(ll j = 0; j<16 ; j++)
     {
-      if( mask[i] && mask[j])
+      	if( mask[i]>0 && mask[j]>0)
       {
-        value = (mask[i]&mask[j]);
-
+        value = (i&j);
         if(value == 0) ans++;
       }
     }
@@ -49,5 +51,5 @@ int main()
   else
     cout << "NO\n";
 
-  return 0;
+	return 0;
 }
