@@ -38,10 +38,10 @@ int main()
     bool start = false;
 
     // to form 00001111
-    for(ll i = 0; i<len-1; i++)
+    for(ll i = 0; i<len; i++)
     {
       if(s[i] == '1')
-        oneb[i+1] = oneb[i]+1;
+        oneb[i] = oneb[i]+1;
 
       else
         {
@@ -75,7 +75,7 @@ int main()
 
     for(ll i = i = 0; i<len ; i++)
     {
-      minans2 = min( minans2 , abs(zeroa[i] - oneb[i]));
+      minans2 = min( minans2 , min(zeroa[i] - oneb[i]));
     }
 
     vector<ll> onea(len, 0);
