@@ -34,7 +34,7 @@ int main()
         }
 
         else if(temp%4==0)
-        {
+        { 
           b/=4;
           ops++;
         }
