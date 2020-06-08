@@ -14,7 +14,6 @@ int main()
   {
 		 ll n;
      cin >> n;
-
      vector<ll> a(n);
      vector<ll> sorta(n);
      vector<ll> b(n);
@@ -25,7 +24,7 @@ int main()
        sorta[i]=a[i];
      }
 
-     ll zero = 0, one = 0;
+     // ll zero = 0, one = 0;
 
      for(ll i = 0; i<n; i++)
      {

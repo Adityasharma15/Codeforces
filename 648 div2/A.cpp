@@ -18,8 +18,8 @@ int main()
     cin >> n >> m;
     ll arr[n][m];
 
-    vector<bool> row(n);
-    vector<bool> column(m);
+    vector<bool> row(n, false);
+    vector<bool> column(m, false);
 
     for(ll i = 0;i<n;i++)
     {
