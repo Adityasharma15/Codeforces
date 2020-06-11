@@ -23,7 +23,6 @@ int main()
   for(ll i = 0; i<n; i++) cin >> b[i];
 
   vector<ll> rotations(n);
-
   for(ll i = 0; i<n; i++)
   {
       if(mapp[b[i]]<i)

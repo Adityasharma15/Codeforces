@@ -1,3 +1,4 @@
+// Codeforces 1363B - Round 646 div2 B
 #include<bits/stdc++.h>
 #define ll long long
 using namespace std;
@@ -18,7 +19,6 @@ int main()
 
     ll len = s.length(), minans1, minans2 = INT_MAX, minans3 = INT_MAX;
 
-
     ll ones = 0, zero = 0;
     for(ll i = 0; i<len; i++)
       {
@@ -28,7 +28,7 @@ int main()
         else
           zero++;
       }
-    // to form string using only one
+    // to form string using only one of them
     minans1 = min(ones, zero);
 
     vector<ll> oneb(len, 0);
@@ -36,22 +36,18 @@ int main()
     bool start = false;
 
     // to form 00001111
-		if(s[0]=='1') oneb[0] = 1;
-
-		for(ll i = 1; i<len; i++)
+		for(ll i = 0; i<(len-1); i++)
     {
       if(s[i] == '1')
-        oneb[i] = oneb[i-1]+1;
+        oneb[i+1] = oneb[i]+1;
 
-      else
-          oneb[i] = oneb[i-1];
+	      else
+          oneb[i+1] = oneb[i];
     }
 
 		if(s[len-1] == '0') zeroa[len-1] = 1;
-
     for(ll i = len-2; i>=0 ;i--)
     {
-
       if(s[i] == '0')
         zeroa[i] = zeroa[i+1] + 1;
 
@@ -76,18 +72,18 @@ int main()
     vector<ll> zerob(len, 0);
 
     // to form 11110000
-		if(s[0] == '0') zeroa[0] = 1;
-    for(ll i = 1; i<len-1; i++)
+		// if(s[0] == '0') zeroa[0] = 1;
+    for(ll i = 0; i<(len-1); i++)
     {
       if(s[i] == '0')
-        zerob[i] = zerob[i-1]+1;
+        zerob[i+1] = zerob[i]+1;
 
       else
-        zerob[i] = zerob[i-1];
+        zerob[i+1] = zerob[i];
     }
 
 		if(s[len-1] == '1') onea[len-1] = 1;
-    for(ll i = len-2; i>0 ;i--)
+    for(ll i = len-2; i>=0 ;i--)
     {
       if(s[i] == '1')
         onea[i] = onea[i+1] + 1;
@@ -101,10 +97,15 @@ int main()
       minans3 = min( minans3, (zerob[i] + onea[i]));
     }
 
+		// for(auto i: onea) cout << i << " ";
+    // cout << "\n";
+    // for(auto i: zerob) cout << i << " ";
+    // cout << "\n";
+
     ll realans = min(minans2, minans3);
     realans = min(realans, minans1);
-    cout << minans1 << " " << minans2 << " " << minans3 << "\n";
-
+    // cout << minans1 << " " << minans2 << " " << minans3 << "\n";
+		cout << realans << "\n";
 	}
   return 0;
 }
