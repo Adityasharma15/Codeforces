@@ -1,36 +1,36 @@
-#include<bits/stdc++.h>
-#define ll long long
-using namespace std;
+  #include<bits/stdc++.h>
+  #define ll long long
+  using namespace std;
 
-int main()
-{
-	ios_base::sync_with_stdio(0);
-  cin.tie(0);
-	cout.tie(0);
-
-	ll t;
-	cin >> t;
-
-	while(t--)
+  int main()
   {
+  	ios_base::sync_with_stdio(0);
+    cin.tie(0);
+  	cout.tie(0);
 
-      string s;
-      cin >> s;
+  	ll t;
+  	cin >> t;
 
-      string ans = "";
+  	while(t--)
+    {
 
-      ans+=s[0];
+        string s;
+        cin >> s;
 
-      for(ll i = 1; i<s.length()-1; i=i+2)
-      {
-        ans+=s[i];
-      }
+        string ans = "";
 
-      ans+=s[s.length()-1];
+        ans+=s[0];
 
-      cout << ans << "\n";
-	}
+        for(ll i = 1; i<s.length()-1; i=i+2)
+        {
+          ans+=s[i];
+        }
 
-  return 0;
+        ans+=s[s.length()-1];
 
-}
+        cout << ans << "\n";
+  	}
+
+    return 0;
+
+  }
