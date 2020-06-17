@@ -34,7 +34,7 @@ void BFS(ll start)
 
 bool comp(ll a, ll b)
 {
-  return hashh[a]<hashh[b] ;
+  return (hashh[a]<hashh[b]);
 }
 
 int main()
@@ -47,12 +47,11 @@ int main()
   cin >> n;
 
   ll a, b;
-
-  for(ll i = 0; i<n-1; i++)
+  for(ll i = 0; i<(n-1); i++)
   {
     cin >> a >> b;
-    graph[a].push_back(a);
-    graph[b].push_back(b);
+    graph[a].push_back(b);
+    graph[b].push_back(a);
   }
 
   vector<ll> gbfs(n);
@@ -63,10 +62,26 @@ int main()
     hashh[gbfs[i]] = i;
   }
 
-  for(auto i: graph)
+  // for(auto i: hashh)
+  //   cout << i.first << " "  << i.second << "\n";
+
+  // if(comp(5,4))
+  // cout << "&&& " << "\n";
+
+  for(ll i = 1; i<=n; i++)
   {
-    sort(i.begin(), i.end(), comp);
+    sort(graph[i].begin(), graph[i].end(), comp);
   }
+
+  // for(ll i = 1; i<=n; i++)
+  // {
+  //   cout << i << " ";
+  //
+  //   for(auto j:graph[i])
+  //   cout << j << " ";
+  //
+  //   cout << "\n";
+  // }
 
 
   BFS(1);
@@ -79,14 +94,15 @@ int main()
 
   for(ll i = 0; i<n; i++)
   {
-    cout << ans[i] << " ";
+    // cout << ans[i] << " ";
+
     if(ans[i]!=gbfs[i])
     {
         dif = true;
         // cout << i << " $ ";
     }
 
-    cout << "\n";
+    // cout << "\n";
 
   }
 
