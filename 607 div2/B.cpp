@@ -8,7 +8,7 @@ ll findmin(string a, ll j, ll lena )
 
   for(ll i = j+1;i<lena; i++)
   {
-    if(a[i]<a[minn])
+    if(a[i]<=a[minn])
     {
       minn = i;
     }
@@ -34,18 +34,11 @@ int main()
      cin >> a >> b;
      ll lena = a.length(), lenb = b.length();
 
-     if(tc)
-     {
-       cout << a << "tc" << b << "\n";
-       tc = false;
-     }
-
      ll i = 0, j = 0;
 
     if(a<b)
     {
       cout << a << "\n";
-
       continue;
     }
 
@@ -77,7 +70,7 @@ int main()
                   break;
                 }
 
-                //if a[temp] == b[j];
+                //if a[t  emp] == b[j];
                 else
                 {
                   swap(a[temp], a[i]);
@@ -101,10 +94,6 @@ int main()
 
     else
       cout << a << "\n";
-
-    if(a== "ABCDEFGHIJKLMNOPRSTUVWXYZ")
-      tc = true;
-
 	}
   return 0;
 }

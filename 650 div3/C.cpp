@@ -21,7 +21,6 @@ int main()
     cin >> s;
 
     vector<pair<ll,ll>> pairs;
-
     pairs.push_back({0,0});
 
     ll ones = 0;
@@ -38,7 +37,6 @@ int main()
     }
 
     pairs.push_back({n-1,n-1});
-
     ll ans = 0;
 
     for(ll i= 0; i<(pairs.size()-1); i++)
@@ -47,7 +45,7 @@ int main()
 
           for(ll j = pairs[i].second; j<=pairs[i+1].first ; j++)
           {
-            if(i<0 && i>=n)
+            if(i<0 || i>=n)
               continue;
 
             s[j] = '1';
@@ -67,9 +65,9 @@ int main()
 
       if(s[i]=='1')
       {
-        for(ll j = i+1; j<(i+k+1); j++)
+        for(ll j = i+1; j<(i+k+1) && j<n; j++)
         {
-          // cout << j << " ";
+          // cout << j << " ";a
           s[j]='0';
         }
         // cout << "\n";
