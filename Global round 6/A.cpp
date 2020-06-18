@@ -13,26 +13,38 @@ int main()
 
 	while(t--)
   {
+		string s;
+    cin >> s;
 
-		ll n;
-		cin >> n;
+    ll sum = 0;
+    bool zero = false;
+    bool even = false;
 
-		if(n==1)
-		{
-				cout << "-1" << "\n";
-		}
+    for(ll i = 0 ; i<s.length(); i++)
+    {
+      ll temp = (s[i] - '0');
 
-		else
-		{
+      sum+=temp;
 
-		cout << 2;
+      if(temp==0 && zero==false)
+        {
+          zero = true;
+          continue;
+        }
 
-		for(ll i = 1 ; i< (n) ;i++)
-			cout << 9;
+      if(temp%2==0)
+        {
+          // cout << "h";
+          even = true;
+        }
+    }
 
-		cout << "\n";
-		}
+    if(even==true && zero==true && sum%3==0)
+      cout << "red\n";
+
+    else
+      cout << "cyan\n";
 
 	}
-
+  return 0;
 }

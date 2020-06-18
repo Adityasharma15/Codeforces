@@ -8,28 +8,25 @@ int main()
   cin.tie(0);
 	cout.tie(0);
 
-		ll n;
+	ll t;
+	cin >> t;
+	while(t--)
+  {
+    ll num;
+    cin >> num;
+    ll temp = num%14;
 
-    cin >> n;
-
-    ll maxx = -1, temp, temp2;
-
-    cin >> temp;
-    cout << temp << " ";
-    maxx = temp;
-
-    for(ll i = 1; i<n; i++)
+    if(num<=14)
     {
-      cin >> temp;
-
-      temp2 = maxx + temp;
-
-      cout << temp2 << " ";
-
-      maxx = max(temp2, maxx);
-
+      cout << "NO\n";
+      continue;
     }
 
-    cout << "\n";
+    if(temp>=1 && temp<=6)
+      cout << "YES\n";
 
+    else
+      cout <<"NO\n";
+	}
+  return 0;
 }

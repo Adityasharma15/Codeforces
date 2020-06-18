@@ -8,59 +8,60 @@ int main()
   cin.tie(0);
 	cout.tie(0);
 
-  ll n, k;
-  cin >> n >> k;
+    ll n, m;
+    cin >> n >> m;
 
-  map<ll, ll > m1;
+    if(n==1 && m==1)
+    {
+      cout << "0\n";
+      return 0;
+    }
 
-  ll arr[n];
-
-  for(ll i = 0; i<n; i++)
-  {
-    cin >> arr[i];
-    m1[arr[i]] = i;
-  }
-
-  sort(arr, arr + sizeof(arr[n])/sizeof(arr[0]));
-
-  ll maxx = 0;
-
-
-  for(ll i = (n-1); i>= (n-k); i--)
-  {
-    maxx += arr[i];
-  }
-
-  ll count = 0;
+	if(m==1)
+	{
+		for(ll i = 2; i<=(n+1); i++)
+		{
+			cout << i << "\n";
+		}
+		return 0;
+	}
 
 
+    ll arr[n][m];
+    for(ll i = 0; i<n; i++)
+    {
+      for(ll j = 0;j<m; j++)
+      {
+        arr[i][j] = 1;
+      }
+    }
+
+    for(ll i = 0; i<n; i++)
+    {
+      for(ll j = 0; j<m; j++)
+      {
+        arr[i][j]=arr[i][j]*(i+1);
+      }
+    }
 
 
+    for(ll i = 0; i<m; i++)
+    {
+      for(ll j = 0; j<n; j++)
+      {
+        arr[j][i] = arr[j][i]*(i+1+n);
+      }
+    }
 
-  std::vector<ll> v;
+    for(ll i = 0; i<n; i++)
+    {
+      for(ll j = 0; j<m; j++)
+      {
+        cout << arr[i][j] << " ";
+      }
+      cout << "\n";
+    }
 
-  map<ll, ll>::reverse_iterator it;
-
-  for (it = m1.rbegin(); it != m1.rend(); it++) {
-      //maxx += arr[i.second];
-      count++;
-      ll a = it.second;
-
-      v.push_back(a);
-
-      if(count>k)
-        break;
-  }
-
-  sort(v.begin(), v.end());
-
-  ll numb = 1;
-
-  for(ll j = 0; j<v.size(); j++)
-  {
-    numb *= v[j];
-  }
-
-  cout << maxx << " " << numb << "\n";
+  return 0;
 
 }
