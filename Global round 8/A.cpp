@@ -12,7 +12,6 @@ int main()
 	cin >> t;
 	while(t--)
   {
-
     ll a, b, c;
     cin >> a >> b >> c;
 
