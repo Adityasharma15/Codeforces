@@ -10,7 +10,6 @@ int main()
 
 	ll n;
   cin >> n;
-
   vector<ll> pos(n+1);
   vector<ll> pow(n+1);
 

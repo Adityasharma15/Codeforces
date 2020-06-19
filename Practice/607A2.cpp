@@ -13,7 +13,6 @@ int main()
 
   vector<ll> pos(n+1);
   vector<ll> pow(n+1);
-
   unordered_set<ll> positions;
 
   for(ll i = 1; i<=n; i++)
@@ -28,7 +27,6 @@ int main()
   for(ll i = 1; i<=n; i++)
   {
     dp[i] = upper_bound(pos.begin(), pos.end(), (pos[i] - 1)) - lower_bound(pos.begin(), pos.end(), (pos[i] -pow[i])) ;
-
     // cout << lower_bound(pos.begin(), pos.end(), (pos[i] -  pow[i]) ) - pos.begin() << "   " << upper_bound(pos.begin(), pos.end(), (pos[i] - 1)) - pos.begin() << "\n";
     // cout << dp[i] << "\n";
   }
@@ -39,7 +37,6 @@ int main()
 
   for(ll i = n; i>0; i--)
   {
-
       if(dp[i] > ((n+2) - i))
         {
           kill = i;
@@ -62,12 +59,9 @@ int main()
 
         i = pos+1;
       }
-
   }
 
   ans += ((n+1) - kill);
-
   cout << ans << "\n";
-
   return 0;
 }
