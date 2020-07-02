@@ -41,7 +41,13 @@ int main()
             dp[i] = 1;
 
           else
-            dp[i] = dp[i-1];
+          {
+            if(s[i-1] == '-')
+              dp[i] = dp[i-1] + (i+1);
+
+            else
+              dp[i] = dp[i-1] +1;
+          }
         }
 
         else
@@ -50,13 +56,14 @@ int main()
             dp[i] = 1;
 
           else
-            dp[i] = (dp[i-1] + (i+1));
+              dp[i] = (dp[i-1] + (i+1));
+
+          // continue;
         }
       }
     }
 
-    if(s[len-1] == '-')
-      dp[len-1] += len;
+    if(sum)
 
     if(!start)
       cout << len << "\n";
