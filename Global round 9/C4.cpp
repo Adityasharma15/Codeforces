@@ -13,24 +13,24 @@ int main()
 
 	while(t--)
   {
+		ll n;
+    cin >> n;
 
-		string s;
-		cin >> s;
+    vector<ll> vec(n);
 
-		ll jump = 0 , ans = 0, sum = 0;
+    for(ll i = 0; i<n ; i++)
+      cin >> vec[i];
 
-		for(ll i = 0; i<s.length(); i++)
-		{
-			if(s[i]=='+') sum++;
+    if(vec[0] > vec[n-1])
+      cout << "NO\n";
 
-			else	sum--;
-
-
+    else
+      cout << "YES\n";
 
 
-		}
 
 	}
 
   return 0;
+
 }

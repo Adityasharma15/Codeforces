@@ -38,21 +38,6 @@ int main()
     ll minn1 = INT_MAX;
     ll maxx1 = INT_MIN;
 
-    // for(ll i = 0; i<(n-1); i++)
-    // {
-    //   minn1 = min(minn1, vec[i]);
-    //   maxx1 = max(minn1, maxx1);
-    // }
-    //
-    // ll minn2 = INT_MAX;
-    // ll maxx2 = INT_MIN;
-    //
-    // for(ll i = (n-1); i>0; i--)
-    // {
-    //   minn2 = min(minn2, vec[i]);
-    //   maxx2 = max(minn2, maxx2);
-    // }
-
     cout << max(vec[0], vec[n-1]) << "\n";
   }
 
