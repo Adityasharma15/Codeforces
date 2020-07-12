@@ -30,12 +30,12 @@ int main()
 			if(s[i] == 'P'  && temp == 0)
 			{
 					count++;
-					maxx = max(maxx, count); 
-					
+					maxx = max(maxx, count);
+
 			}
 		}
-    
-		maxx = max(maxx, count); 
+
+		maxx = max(maxx, count);
 
 		cout << maxx << "\n";
 
