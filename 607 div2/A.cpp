@@ -35,7 +35,7 @@ int main()
     if(len>=4)
     {
       temp = s.substr((len-4), 4);
-      // cout << temp << "\n";
+      // cout << temp << "\n";//
       if(temp == "masu" || temp == "desu")
       {
         cout << "JAPANESE\n";
